@@ -1,1 +1,3 @@
 # salatgenerator.de
+
+`rollup -c`
