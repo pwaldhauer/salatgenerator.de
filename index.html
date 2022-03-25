@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="/">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Salatgenerator.de</title>
+
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+
+<meta name="theme-color" content="#ffffff">
+
+<style>
+
+* {
+	margin:  0;
+	padding:  0;
+	box-sizing: border-box;
+}
+
+html {
+	overflow: hidden;
+}
+
+	body {
+
+	overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+.app {
+	max-width:  375px;
+	margin:  auto;
+
+	padding:  25px 0;
+}
+
+h1 {
+	font-size:  24px;
+	line-height: 32px;
+	text-align: center;
+}
+
+p {
+	font-size:  16px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.cta {
+	margin:  25px 0;
+}
+
+.ctaButton {
+	border-radius: 5px;
+	display:  block;
+	width:  95%;
+	margin:  auto;
+	padding:  20px;
+	font-size:  20px;
+	line-height: 24px;
+	background-color:  #A9CA02;
+	background-image:  linear-gradient(0deg, rgba(158,187,7,1) 0%, rgba(169,202,2,1) 100%);
+	border:  0;
+	appearance:  none;
+	color:  #fff;
+	cursor: pointer;
+}
+
+.recipeList {
+	list-style-type:  none;
+	text-align: center;
+}
+
+.recipeList li {
+	opacity:  0;
+	font-size:  24px;
+	margin-bottom: 10px;
+}
+
+.schuessel {
+	opacity:  0;
+	overflow-x: hidden;
+}
+
+
+.schuessel img {
+	display: block;
+
+	position: absolute;
+	bottom:  -30px;
+	left:  50%;
+}
+
+.schuesselInnen {
+	z-index:  8999;
+	width:  375px;
+	margin-left: calc(-1 * 375px/2);
+}
+
+.schuesselAussen {
+	overflow-x: hidden;
+	z-index:  9100;
+	width:  592px;
+	margin-left: calc(-1 * 592px/2);
+}
+
+.particle {
+	position:  absolute;
+	top:  0;
+	left:  0;
+	z-index: 9001;
+}
+
+.footer {
+	font-size: 12px;
+	color:  #fff;
+	background-color: #B88839;
+	padding:  5px;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+	text-align: center;
+}
+
+.footer a {
+	color:  inherit;
+}
+
+.share {
+	text-align: center;
+
+
+	position: absolute;
+	z-index: 10001;
+
+	bottom: 25px;
+	width:  100%;
+}
+
+.share svg {
+	width:  32px;
+
+}
+
+.shareButton {
+	appearance:  none;
+	background:  transparent;
+	border: none;
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="app">
+	<h1>Salatgenerator</h1>
+	<p>Zu faul selbst zu entscheiden? Generiere dir hier deinen heutigen Salat!</p>
+
+	<div class="cta">
+		<button class="ctaButton">Würfeln</button>
+	</div>
+
+	<div class="recipe">
+
+		<ul class="recipeList">
+			
+		</ul>
+
+	</div>
+
+
+	<div class="schuessel">
+		<img class="schuesselInnen" src="schuessel-innen.png">
+		<img class="schuesselAussen" src="schuessel.png">
+
+	</div>
+
+</div>
+
+<div class="share">
+	<button class="shareButton">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" enable-background="new 0 0 50 50"><path fill="#fff" d="M30.3 13.7L25 8.4l-5.3 5.3-1.4-1.4L25 5.6l6.7 6.7z"/><path fill="#fff" d="M24 7h2v21h-2z"/><path fill="#fff" d="M35 40H15c-1.7 0-3-1.3-3-3V19c0-1.7 1.3-3 3-3h7v2h-7c-.6 0-1 .4-1 1v18c0 .6.4 1 1 1h20c.6 0 1-.4 1-1V19c0-.6-.4-1-1-1h-7v-2h7c1.7 0 3 1.3 3 3v18c0 1.7-1.3 3-3 3z"/></svg>
+</button>
+</div>
+
+<div class="footer">
+	Ein <a href="https://knuspermagier.de">knuspermagier.de</a>-Projekt
+</div>
+
+<canvas id="shareCanvas" width="1200" height="675" style="display: none; border: 2px solid red; transform: scale(0.5); position: absolute; left:0; top: 200px;">
+
+</canvas>
+
+<img class="schuesselOhneWeiss" src="schuessel-ohne-weiss.png" style="display: none;">
+
+</body>
+
+<script src="bundle.js"></script>
+
+
+</html>
+
